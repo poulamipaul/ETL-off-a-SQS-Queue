@@ -12,7 +12,7 @@ conn = pg8000.connect(
 )
 
 cur = conn.cursor()
-
+# Change app_version type as it is format Integer in DDL but actual values are of *.*.*.* type
 cur.execute("""ALTER TABLE user_logins ALTER COLUMN app_version TYPE varchar (20);""")
 
 
